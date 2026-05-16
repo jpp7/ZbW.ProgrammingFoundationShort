@@ -14,7 +14,7 @@ public partial class KontaktMvcForm : Form
 
   private void CmdHinzufuegen_Click(object sender, EventArgs e)
   {
-    var contact = new Contact
+    Contact contact = new Contact
     {
       FirstName = TxtFirst.Text.Trim(),
       LastName = TxtLast.Text.Trim(),
@@ -30,17 +30,25 @@ public partial class KontaktMvcForm : Form
       return;
     }
 
-    _contactManager.Add(contact);
+    if (!_contactManager.Add(contact))
+    {
+      MessageBox.Show("Ein Kontakt mit dieser Telefonnummer existiert bereits.",
+        "Duplikat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+      return;
+    }
+
     AktualisiereAusgabe();
     TxtFirst.Clear(); TxtLast.Clear(); TxtPhone.Clear(); TxtEmail.Clear(); TxtBirthday.Clear();
   }
 
   private void CmdSuchen_Click(object sender, EventArgs e)
   {
-    var result = _contactManager.Search(TxtSuche.Text.Trim());
+    List<Contact> result = _contactManager.Search(TxtSuche.Text.Trim());
     TxtAusgabe.Clear();
-    foreach (var c in result)
-      TxtAusgabe.AppendText(c + "\r\n");
+    foreach (Contact contact in result)
+    {
+      TxtAusgabe.AppendText(contact + "\r\n");
+    }
   }
 
   private void CmdAlleAnzeigen_Click(object sender, EventArgs e)
@@ -51,7 +59,9 @@ public partial class KontaktMvcForm : Form
   private void AktualisiereAusgabe()
   {
     TxtAusgabe.Clear();
-    foreach (var c in _contactManager.GetAll())
-      TxtAusgabe.AppendText(c + "\r\n");
+    foreach (Contact contact in _contactManager.GetAll())
+    {
+      TxtAusgabe.AppendText(contact + "\r\n");
+    }
   }
 }

@@ -5,9 +5,22 @@ public class ContactManager
 {
   private readonly List<Contact> _contacts = new();
 
-  public void Add(Contact contact) => _contacts.Add(contact);
+  public bool Add(Contact contact)
+  {
+    if (_contacts.Contains(contact))
+    {
+      return false;
+    }
 
-  public bool Remove(Contact contact) => _contacts.Remove(contact);
+    _contacts.Add(contact);
+    return true;
+  }
+
+  public bool Remove(string phone)
+  {
+    Contact? contact = _contacts.Find(c => c.Phone.Equals(phone, StringComparison.OrdinalIgnoreCase));
+    return contact is not null && _contacts.Remove(contact);
+  }
 
   public List<Contact> Search(string query)
   {

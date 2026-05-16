@@ -9,9 +9,24 @@ public class Contact
   public string Email { get; set; } = "";
   public DateTime? Birthday { get; set; }
 
+  public override bool Equals(object? obj)
+  {
+    if (obj is not Contact other)
+    {
+      return false;
+    }
+
+    return Phone.Equals(other.Phone, StringComparison.OrdinalIgnoreCase);
+  }
+
+  public override int GetHashCode()
+  {
+    return Phone.ToLowerInvariant().GetHashCode();
+  }
+
   public override string ToString()
   {
-    string bday = Birthday.HasValue ? $" | Geb: {Birthday:dd.MM.yyyy}" : "";
-    return $"{FirstName} {LastName} | {Phone} | {Email}{bday}";
+    string birthdayText = Birthday?.ToString("dd.MM.yyyy") ?? "kein Geburtstag";
+    return $"{FirstName} {LastName} | {Phone} | {Email} | Geb: {birthdayText}";
   }
 }
