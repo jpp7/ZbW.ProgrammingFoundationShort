@@ -14,7 +14,9 @@ internal static class Program
     ApplicationConfiguration.Initialize();
 
     // ---- Modul 01 ----
+    // ZbW.ProgrammingFoundationShort.Lessons.Module01.Auftrag1_Taschenrechner.Taschenrechner.Start();
     // Application.Run(new ZbW.ProgrammingFoundationShort.Lessons.Module01.Auftrag2_Temperaturrechner.TemperaturrechnerForm());
+    // ZbW.ProgrammingFoundationShort.Lessons.Module01.Auftrag3_DatentypQuiz.DatentypQuiz.Start();
 
     // ---- Modul 02 ----
     // Application.Run(new ZbW.ProgrammingFoundationShort.Lessons.Module02.Auftrag1_Notenrechner.NotenrechnerForm());
@@ -53,11 +55,11 @@ internal static class Program
 
     // ---- Modul 09 ----
     // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag1_AnimalHierarchy.AnimalHierarchy.RunDemo());
-    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag2_AbstractShape._Loesung.ShapeDemoLoesung.RunDemo());
+    // Console.WriteLine(new ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag2_AbstractShape.Circle { Color = "Rot", Radius = 5 }.Describe());
     // ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag3_PrintableInterface.PrintableDemo.PrintAll(new List<ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag3_PrintableInterface.IPrintable>());
 
     // ---- Modul 10 ----
-    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag1_SucheVergleichen._Loesung.SucheVergleichenLoesung.RunDemo());
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag1_SucheVergleichen.SucheVergleichen.LinearSearch(new[] { 3, 1, 7, 5, 9 }, 7));
     // Application.Run(new ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag2_BrowserVerlaufStack.BrowserVerlaufForm());
     // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag3_SortierVisualisierung.SortierVisualisierung.BubbleSortSteps(new[] { 64, 34, 25, 12, 22, 11, 90 }));
   }
