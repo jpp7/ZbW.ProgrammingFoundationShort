@@ -1,0 +1,34 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZbW.ProgrammingFoundationShort.Lessons", "ZbW.ProgrammingFoundationShort.Lessons\ZbW.ProgrammingFoundationShort.Lessons.csproj", "{FE1FDFCB-9117-4CDE-9B9A-6FC8F9C81F4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZbW.ProgrammingFoundationShort.Challenges", "ZbW.ProgrammingFoundationShort.Challenges\ZbW.ProgrammingFoundationShort.Challenges.csproj", "{024BBDF1-3613-4E50-AA69-E2B697815B45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution.Items", "_Solution.Items", "{D1FD1B12-2844-4346-8141-F9FD6F3F5EEB}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE1FDFCB-9117-4CDE-9B9A-6FC8F9C81F4D}.Debug|x64.ActiveCfg = Debug|x64
+		{FE1FDFCB-9117-4CDE-9B9A-6FC8F9C81F4D}.Debug|x64.Build.0 = Debug|x64
+		{FE1FDFCB-9117-4CDE-9B9A-6FC8F9C81F4D}.Release|x64.ActiveCfg = Release|x64
+		{FE1FDFCB-9117-4CDE-9B9A-6FC8F9C81F4D}.Release|x64.Build.0 = Release|x64
+		{024BBDF1-3613-4E50-AA69-E2B697815B45}.Debug|x64.ActiveCfg = Debug|x64
+		{024BBDF1-3613-4E50-AA69-E2B697815B45}.Debug|x64.Build.0 = Debug|x64
+		{024BBDF1-3613-4E50-AA69-E2B697815B45}.Release|x64.ActiveCfg = Release|x64
+		{024BBDF1-3613-4E50-AA69-E2B697815B45}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
