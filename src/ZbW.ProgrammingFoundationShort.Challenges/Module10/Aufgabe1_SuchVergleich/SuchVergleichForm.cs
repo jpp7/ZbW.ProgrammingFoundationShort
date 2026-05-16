@@ -29,19 +29,26 @@ public sealed class SuchVergleichForm : Form
 
   private void CmdLinear_Click(object sender, EventArgs e)
   {
-    int[] numbers = ParseNumbers();
-    int target = int.Parse(txtTarget.Text);
-    int index = SearchAlgorithms.LinearSearch(numbers, target, out int comparisons);
-    lblResult.Text = $"Linear: Index {index}, {comparisons} Vergleiche";
+    ShowComparison("Linear");
   }
 
   private void CmdBinary_Click(object sender, EventArgs e)
   {
+    ShowComparison("Binär");
+  }
+
+  private void ShowComparison(string selectedAlgorithm)
+  {
     int[] numbers = ParseNumbers();
     int target = int.Parse(txtTarget.Text);
-    Array.Sort(numbers);
-    int index = SearchAlgorithms.BinarySearch(numbers, target, out int comparisons);
-    lblResult.Text = $"Binär: Index {index}, {comparisons} Vergleiche | Sortiert: {string.Join(", ", numbers)}";
+    int linearIndex = SearchAlgorithms.LinearSearch(numbers, target, out int linearComparisons);
+    int[] sorted = numbers.ToArray();
+    Array.Sort(sorted);
+    int binaryIndex = SearchAlgorithms.BinarySearch(sorted, target, out int binaryComparisons);
+
+    lblResult.Text = $"{selectedAlgorithm} gewählt\r\n" +
+                     $"Linear: Index {linearIndex}, {linearComparisons} Vergleiche | Binär: Index {binaryIndex}, {binaryComparisons} Vergleiche\r\n" +
+                     $"Sortiert: {string.Join(", ", sorted)}";
   }
 
   private int[] ParseNumbers()

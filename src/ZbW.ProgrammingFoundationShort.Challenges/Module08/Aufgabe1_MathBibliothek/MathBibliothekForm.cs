@@ -3,52 +3,98 @@ namespace ZbW.ProgrammingFoundationShort.Challenges.Module08.Aufgabe1_MathBiblio
 public sealed class MathBibliothekForm : Form
 {
   private readonly TextBox txtNumber;
+  private readonly TextBox txtSecondNumber;
+  private readonly RadioButton rdoCircleArea;
+  private readonly RadioButton rdoCircleCircumference;
+  private readonly RadioButton rdoRectangleArea;
   private readonly RadioButton rdoPrime;
   private readonly RadioButton rdoFactorial;
-  private readonly RadioButton rdoSquare;
   private readonly Label lblResult;
 
   public MathBibliothekForm()
   {
     Text = "Math-Bibliothek – Aufgabe 1";
-    ClientSize = new Size(360, 190);
+    ClientSize = new Size(420, 260);
 
-    txtNumber = new TextBox { Location = new Point(12, 12), Size = new Size(100, 23), Text = "7" };
-    rdoPrime = new RadioButton { Location = new Point(12, 50), Size = new Size(120, 24), Text = "Primzahl", Checked = true };
-    rdoFactorial = new RadioButton { Location = new Point(12, 75), Size = new Size(120, 24), Text = "Fakultät" };
-    rdoSquare = new RadioButton { Location = new Point(12, 100), Size = new Size(120, 24), Text = "Quadrat" };
-    Button cmdCalculate = new Button { Location = new Point(130, 10), Size = new Size(100, 28), Text = "Berechnen" };
-    lblResult = new Label { Location = new Point(12, 135), Size = new Size(330, 40) };
+    txtNumber = new TextBox { Location = new Point(120, 12), Size = new Size(100, 23), Text = "5" };
+    txtSecondNumber = new TextBox { Location = new Point(120, 45), Size = new Size(100, 23), Text = "3" };
+    rdoCircleArea = new RadioButton { Location = new Point(12, 85), Size = new Size(150, 24), Text = "Kreisfläche", Checked = true };
+    rdoCircleCircumference = new RadioButton { Location = new Point(12, 110), Size = new Size(150, 24), Text = "Kreisumfang" };
+    rdoRectangleArea = new RadioButton { Location = new Point(12, 135), Size = new Size(150, 24), Text = "Rechteckfläche" };
+    rdoPrime = new RadioButton { Location = new Point(190, 85), Size = new Size(120, 24), Text = "Primzahl" };
+    rdoFactorial = new RadioButton { Location = new Point(190, 110), Size = new Size(120, 24), Text = "Fakultät" };
+    Button cmdCalculate = new Button { Location = new Point(240, 10), Size = new Size(100, 28), Text = "Berechnen" };
+    lblResult = new Label { Location = new Point(12, 180), Size = new Size(390, 60) };
 
     cmdCalculate.Click += CmdCalculate_Click;
 
+    Controls.Add(new Label { Location = new Point(12, 15), Size = new Size(100, 20), Text = "Wert 1:" });
+    Controls.Add(new Label { Location = new Point(12, 48), Size = new Size(100, 20), Text = "Wert 2:" });
     Controls.Add(txtNumber);
+    Controls.Add(txtSecondNumber);
+    Controls.Add(rdoCircleArea);
+    Controls.Add(rdoCircleCircumference);
+    Controls.Add(rdoRectangleArea);
     Controls.Add(rdoPrime);
     Controls.Add(rdoFactorial);
-    Controls.Add(rdoSquare);
     Controls.Add(cmdCalculate);
     Controls.Add(lblResult);
   }
 
   private void CmdCalculate_Click(object sender, EventArgs e)
   {
-    if (!int.TryParse(txtNumber.Text, out int number))
+    if (!double.TryParse(txtNumber.Text, out double firstValue))
     {
-      lblResult.Text = "Bitte eine ganze Zahl eingeben.";
+      lblResult.Text = "Bitte Wert 1 als Zahl eingeben.";
       return;
     }
 
-    if (rdoPrime.Checked)
-      lblResult.Text = MathTools.IsPrime(number) ? $"{number} ist prim." : $"{number} ist nicht prim.";
+    if (rdoCircleArea.Checked)
+      lblResult.Text = $"Kreisfläche: {MathHelper.CircleArea(firstValue):F2}";
+    else if (rdoCircleCircumference.Checked)
+      lblResult.Text = $"Kreisumfang: {MathHelper.CircleCircumference(firstValue):F2}";
+    else if (rdoRectangleArea.Checked)
+    {
+      if (!double.TryParse(txtSecondNumber.Text, out double secondValue))
+      {
+        lblResult.Text = "Bitte Wert 2 als Zahl eingeben.";
+        return;
+      }
+
+      lblResult.Text = $"Rechteckfläche: {MathHelper.RectangleArea(firstValue, secondValue):F2}";
+    }
+    else if (rdoPrime.Checked)
+    {
+      int number = (int)firstValue;
+      lblResult.Text = MathHelper.IsPrime(number) ? $"{number} ist prim." : $"{number} ist nicht prim.";
+    }
     else if (rdoFactorial.Checked)
-      lblResult.Text = $"{number}! = {MathTools.Factorial(number)}";
-    else
-      lblResult.Text = $"{number}² = {MathTools.Square(number)}";
+    {
+      int number = (int)firstValue;
+      lblResult.Text = $"{number}! = {MathHelper.Factorial(number)}";
+    }
   }
 }
 
-public static class MathTools
+public static class MathHelper
 {
+  public const double Pi = 3.14159265358979;
+
+  public static double CircleArea(double radius)
+  {
+    return Pi * radius * radius;
+  }
+
+  public static double CircleCircumference(double radius)
+  {
+    return 2 * Pi * radius;
+  }
+
+  public static double RectangleArea(double width, double height)
+  {
+    return width * height;
+  }
+
   public static bool IsPrime(int number)
   {
     if (number < 2)
@@ -63,21 +109,16 @@ public static class MathTools
     return true;
   }
 
-  public static long Factorial(int number)
+  public static int Factorial(int number)
   {
     if (number < 0)
       throw new ArgumentOutOfRangeException(nameof(number));
 
-    long result = 1;
+    int result = 1;
 
     for (int value = 2; value <= number; value++)
       result *= value;
 
     return result;
-  }
-
-  public static int Square(int number)
-  {
-    return number * number;
   }
 }

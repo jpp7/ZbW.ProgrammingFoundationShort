@@ -2,7 +2,9 @@ namespace ZbW.ProgrammingFoundationShort.Challenges.Module09.Aufgabe1_TierHierar
 
 public sealed class TierHierarchieForm : Form
 {
-  private readonly ComboBox cmbType;
+  private readonly RadioButton rdoDog;
+  private readonly RadioButton rdoCat;
+  private readonly RadioButton rdoBird;
   private readonly TextBox txtName;
   private readonly TextBox txtAge;
   private readonly TextBox txtExtra;
@@ -11,22 +13,24 @@ public sealed class TierHierarchieForm : Form
   public TierHierarchieForm()
   {
     Text = "Tier-Hierarchie – Aufgabe 1";
-    ClientSize = new Size(430, 230);
+    ClientSize = new Size(430, 260);
 
-    cmbType = new ComboBox { Location = new Point(120, 12), Size = new Size(160, 23), DropDownStyle = ComboBoxStyle.DropDownList };
-    cmbType.Items.AddRange(new object[] { "Hund", "Katze", "Vogel" });
-    cmbType.SelectedIndex = 0;
-    txtName = new TextBox { Location = new Point(120, 45), Size = new Size(160, 23), Text = "Bello" };
-    txtAge = new TextBox { Location = new Point(120, 78), Size = new Size(80, 23), Text = "3" };
-    txtExtra = new TextBox { Location = new Point(120, 111), Size = new Size(160, 23), Text = "Golden Retriever" };
-    Button cmdCreate = new Button { Location = new Point(120, 145), Size = new Size(130, 28), Text = "Erstellen" };
-    lblResult = new Label { Location = new Point(12, 185), Size = new Size(400, 35) };
+    rdoDog = new RadioButton { Location = new Point(120, 12), Size = new Size(70, 24), Text = "Hund", Checked = true };
+    rdoCat = new RadioButton { Location = new Point(195, 12), Size = new Size(70, 24), Text = "Katze" };
+    rdoBird = new RadioButton { Location = new Point(270, 12), Size = new Size(70, 24), Text = "Vogel" };
+    txtName = new TextBox { Location = new Point(120, 50), Size = new Size(160, 23), Text = "Bello" };
+    txtAge = new TextBox { Location = new Point(120, 83), Size = new Size(80, 23), Text = "3" };
+    txtExtra = new TextBox { Location = new Point(120, 116), Size = new Size(160, 23), Text = "Golden Retriever" };
+    Button cmdCreate = new Button { Location = new Point(120, 155), Size = new Size(130, 28), Text = "Erstellen" };
+    lblResult = new Label { Location = new Point(12, 195), Size = new Size(400, 50) };
 
     Controls.Add(new Label { Location = new Point(12, 15), Size = new Size(100, 20), Text = "Tierart:" });
-    Controls.Add(new Label { Location = new Point(12, 48), Size = new Size(100, 20), Text = "Name:" });
-    Controls.Add(new Label { Location = new Point(12, 81), Size = new Size(100, 20), Text = "Alter:" });
-    Controls.Add(new Label { Location = new Point(12, 114), Size = new Size(100, 20), Text = "Rasse/Fliegt:" });
-    Controls.Add(cmbType);
+    Controls.Add(new Label { Location = new Point(12, 53), Size = new Size(100, 20), Text = "Name:" });
+    Controls.Add(new Label { Location = new Point(12, 86), Size = new Size(100, 20), Text = "Alter:" });
+    Controls.Add(new Label { Location = new Point(12, 119), Size = new Size(100, 20), Text = "Rasse/Fliegt:" });
+    Controls.Add(rdoDog);
+    Controls.Add(rdoCat);
+    Controls.Add(rdoBird);
     Controls.Add(txtName);
     Controls.Add(txtAge);
     Controls.Add(txtExtra);
@@ -46,9 +50,9 @@ public sealed class TierHierarchieForm : Form
 
     Animal animal;
 
-    if (cmbType.SelectedItem?.ToString() == "Hund")
+    if (rdoDog.Checked)
       animal = new Dog { Name = txtName.Text, Age = age, Breed = txtExtra.Text };
-    else if (cmbType.SelectedItem?.ToString() == "Vogel")
+    else if (rdoBird.Checked)
       animal = new Bird { Name = txtName.Text, Age = age, CanFly = txtExtra.Text.Equals("ja", StringComparison.OrdinalIgnoreCase) };
     else
       animal = new Cat { Name = txtName.Text, Age = age };

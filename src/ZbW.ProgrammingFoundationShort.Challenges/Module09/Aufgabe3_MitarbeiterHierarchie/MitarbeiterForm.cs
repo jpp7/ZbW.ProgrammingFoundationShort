@@ -7,13 +7,14 @@ public sealed class MitarbeiterForm : Form
   private readonly TextBox txtName;
   private readonly TextBox txtBaseSalary;
   private readonly TextBox txtExtra;
+  private readonly TextBox txtTeamSize;
   private readonly ListBox lstEmployees;
   private readonly Label lblTotal;
 
   public MitarbeiterForm()
   {
     Text = "Mitarbeiter-Hierarchie – Aufgabe 3";
-    ClientSize = new Size(620, 360);
+    ClientSize = new Size(650, 390);
 
     cmbType = new ComboBox { Location = new Point(120, 12), Size = new Size(180, 23), DropDownStyle = ComboBoxStyle.DropDownList };
     cmbType.Items.AddRange(new object[] { "FullTime", "PartTime", "Manager" });
@@ -21,18 +22,21 @@ public sealed class MitarbeiterForm : Form
     txtName = new TextBox { Location = new Point(120, 45), Size = new Size(180, 23), Text = "Anna" };
     txtBaseSalary = new TextBox { Location = new Point(120, 78), Size = new Size(100, 23), Text = "8000" };
     txtExtra = new TextBox { Location = new Point(120, 111), Size = new Size(180, 23), Text = "10" };
-    Button cmdAdd = new Button { Location = new Point(120, 145), Size = new Size(120, 28), Text = "Hinzufügen" };
-    lstEmployees = new ListBox { Location = new Point(320, 12), Size = new Size(280, 280) };
-    lblTotal = new Label { Location = new Point(320, 305), Size = new Size(280, 35) };
+    txtTeamSize = new TextBox { Location = new Point(120, 144), Size = new Size(80, 23), Text = "5" };
+    Button cmdAdd = new Button { Location = new Point(120, 180), Size = new Size(120, 28), Text = "Hinzufügen" };
+    lstEmployees = new ListBox { Location = new Point(330, 12), Size = new Size(300, 300) };
+    lblTotal = new Label { Location = new Point(330, 325), Size = new Size(300, 35) };
 
     Controls.Add(new Label { Location = new Point(12, 15), Size = new Size(100, 20), Text = "Typ:" });
     Controls.Add(new Label { Location = new Point(12, 48), Size = new Size(100, 20), Text = "Name:" });
     Controls.Add(new Label { Location = new Point(12, 81), Size = new Size(100, 20), Text = "Basislohn:" });
     Controls.Add(new Label { Location = new Point(12, 114), Size = new Size(100, 20), Text = "Bonus/Std/Team:" });
+    Controls.Add(new Label { Location = new Point(12, 147), Size = new Size(100, 20), Text = "Teamgrösse:" });
     Controls.Add(cmbType);
     Controls.Add(txtName);
     Controls.Add(txtBaseSalary);
     Controls.Add(txtExtra);
+    Controls.Add(txtTeamSize);
     Controls.Add(cmdAdd);
     Controls.Add(lstEmployees);
     Controls.Add(lblTotal);
@@ -48,11 +52,16 @@ public sealed class MitarbeiterForm : Form
     Employee employee;
 
     if (cmbType.SelectedItem?.ToString() == "Manager")
-      employee = new Manager { Id = employees.Count + 1, Name = txtName.Text, BaseSalary = baseSalary, BonusPercent = extra, TeamSize = 5 };
+    {
+      if (!int.TryParse(txtTeamSize.Text, out int teamSize))
+        return;
+
+      employee = new Manager(txtName.Text, employees.Count + 1, baseSalary, extra, teamSize);
+    }
     else if (cmbType.SelectedItem?.ToString() == "PartTime")
-      employee = new PartTimeEmployee { Id = employees.Count + 1, Name = txtName.Text, HoursPerWeek = (int)extra, HourlyRate = baseSalary };
+      employee = new PartTimeEmployee(txtName.Text, employees.Count + 1, (int)extra, baseSalary);
     else
-      employee = new FullTimeEmployee { Id = employees.Count + 1, Name = txtName.Text, BaseSalary = baseSalary, BonusPercent = extra };
+      employee = new FullTimeEmployee(txtName.Text, employees.Count + 1, baseSalary, extra);
 
     employees.Add(employee);
     RefreshEmployees();
@@ -75,9 +84,16 @@ public sealed class MitarbeiterForm : Form
 
 public class Employee
 {
-  public string Name { get; set; } = "";
+  public Employee(string name, int id, decimal baseSalary)
+  {
+    Name = name;
+    Id = id;
+    BaseSalary = baseSalary;
+  }
+
+  public string Name { get; set; }
   public int Id { get; set; }
-  public decimal BaseSalary { get; set; }
+  protected decimal BaseSalary { get; set; }
 
   public virtual decimal CalculateSalary()
   {
@@ -92,6 +108,12 @@ public class Employee
 
 public class FullTimeEmployee : Employee
 {
+  public FullTimeEmployee(string name, int id, decimal baseSalary, double bonusPercent)
+    : base(name, id, baseSalary)
+  {
+    BonusPercent = bonusPercent;
+  }
+
   public double BonusPercent { get; set; }
 
   public override decimal CalculateSalary()
@@ -102,6 +124,13 @@ public class FullTimeEmployee : Employee
 
 public sealed class PartTimeEmployee : Employee
 {
+  public PartTimeEmployee(string name, int id, int hoursPerWeek, decimal hourlyRate)
+    : base(name, id, 0)
+  {
+    HoursPerWeek = hoursPerWeek;
+    HourlyRate = hourlyRate;
+  }
+
   public int HoursPerWeek { get; set; }
   public decimal HourlyRate { get; set; }
 
@@ -113,6 +142,12 @@ public sealed class PartTimeEmployee : Employee
 
 public sealed class Manager : FullTimeEmployee
 {
+  public Manager(string name, int id, decimal baseSalary, double bonusPercent, int teamSize)
+    : base(name, id, baseSalary, bonusPercent)
+  {
+    TeamSize = teamSize;
+  }
+
   public int TeamSize { get; set; }
 
   public override decimal CalculateSalary()

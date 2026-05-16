@@ -3,61 +3,88 @@ namespace ZbW.ProgrammingFoundationShort.Challenges.Module08.Aufgabe4_Statischer
 public sealed class StatischerLoggerForm : Form
 {
   private readonly TextBox txtMessage;
-  private readonly ListBox lstLog;
+  private readonly TextBox txtLog;
+  private readonly ComboBox cmbFilter;
 
   public StatischerLoggerForm()
   {
     Text = "Statischer Logger – Aufgabe 4";
-    ClientSize = new Size(460, 300);
+    ClientSize = new Size(560, 360);
 
     txtMessage = new TextBox { Location = new Point(12, 12), Size = new Size(300, 23), Text = "Neue Meldung" };
     Button cmdInfo = new Button { Location = new Point(320, 10), Size = new Size(60, 27), Text = "Info" };
-    Button cmdError = new Button { Location = new Point(385, 10), Size = new Size(60, 27), Text = "Error" };
+    Button cmdWarning = new Button { Location = new Point(385, 10), Size = new Size(75, 27), Text = "Warning" };
+    Button cmdError = new Button { Location = new Point(465, 10), Size = new Size(60, 27), Text = "Error" };
     Button cmdClear = new Button { Location = new Point(12, 45), Size = new Size(80, 27), Text = "Leeren" };
-    lstLog = new ListBox { Location = new Point(12, 85), Size = new Size(430, 190) };
+    cmbFilter = new ComboBox { Location = new Point(105, 47), Size = new Size(130, 23), DropDownStyle = ComboBoxStyle.DropDownList };
+    txtLog = new TextBox { Location = new Point(12, 85), Size = new Size(520, 250), Multiline = true, ScrollBars = ScrollBars.Vertical };
 
-    cmdInfo.Click += (sender, args) => AddLog("INFO");
-    cmdError.Click += (sender, args) => AddLog("ERROR");
+    cmbFilter.Items.AddRange(new object[] { "Alle", "Info", "Warning", "Error" });
+    cmbFilter.SelectedIndex = 0;
+
+    cmdInfo.Click += (sender, args) => AddLog(LogLevel.Info);
+    cmdWarning.Click += (sender, args) => AddLog(LogLevel.Warning);
+    cmdError.Click += (sender, args) => AddLog(LogLevel.Error);
     cmdClear.Click += (sender, args) =>
     {
-      StaticLogger.Clear();
+      AppLogger.Clear();
       RefreshLog();
     };
+    cmbFilter.SelectedIndexChanged += (sender, args) => RefreshLog();
 
     Controls.Add(txtMessage);
     Controls.Add(cmdInfo);
+    Controls.Add(cmdWarning);
     Controls.Add(cmdError);
     Controls.Add(cmdClear);
-    Controls.Add(lstLog);
+    Controls.Add(cmbFilter);
+    Controls.Add(txtLog);
   }
 
-  private void AddLog(string level)
+  private void AddLog(LogLevel level)
   {
-    StaticLogger.Log(level, txtMessage.Text);
+    AppLogger.Log(txtMessage.Text, level);
     RefreshLog();
   }
 
   private void RefreshLog()
   {
-    lstLog.Items.Clear();
+    LogLevel? filter = cmbFilter.SelectedItem?.ToString() switch
+    {
+      "Info" => LogLevel.Info,
+      "Warning" => LogLevel.Warning,
+      "Error" => LogLevel.Error,
+      _ => null
+    };
 
-    foreach (string entry in StaticLogger.Entries)
-      lstLog.Items.Add(entry);
+    List<string> entries = AppLogger.GetLogs(filter);
+    txtLog.Text = string.Join(Environment.NewLine, entries);
   }
 }
 
-public static class StaticLogger
+public enum LogLevel
+{
+  Info,
+  Warning,
+  Error
+}
+
+public static class AppLogger
 {
   private static readonly List<string> LogEntries = new List<string>();
 
-  public static IReadOnlyList<string> Entries
+  public static void Log(string message, LogLevel level)
   {
-    get { return LogEntries; }
+    LogEntries.Add($"[{DateTime.Now:dd.MM.yyyy HH:mm:ss}] [{level.ToString().ToUpperInvariant()}] {message}");
   }
 
-  public static void Log(string level, string message)
+  public static List<string> GetLogs(LogLevel? level = null)
   {
-    LogEntries.Add($"{DateTime.Now:HH:mm:ss} [{level}] {message}");
+    if (level == null)
+      return LogEntries.ToList();
+
+    string levelText = $"[{level.Value.ToString().ToUpperInvariant()}]";
+    return LogEntries.Where(entry => entry.Contains(levelText)).ToList();
   }
 
   public static void Clear()
