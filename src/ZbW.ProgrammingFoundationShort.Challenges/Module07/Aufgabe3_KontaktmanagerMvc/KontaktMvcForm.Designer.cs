@@ -51,7 +51,7 @@ partial class KontaktMvcForm
     Controls.Add(LblBirthday); Controls.Add(TxtBirthday); Controls.Add(CmdHinzufuegen);
     Controls.Add(LblSuche); Controls.Add(TxtSuche); Controls.Add(CmdSuchen); Controls.Add(CmdAlleAnzeigen);
     Controls.Add(TxtAusgabe);
-    Name = "KontaktMvcForm"; Text = "Kontaktmanager MVC – Aufgabe 3";
+    Name = "KontaktMvcForm"; Text = "Kontaktmanager – UI und Logik getrennt";
     ResumeLayout(false); PerformLayout();
   }
 

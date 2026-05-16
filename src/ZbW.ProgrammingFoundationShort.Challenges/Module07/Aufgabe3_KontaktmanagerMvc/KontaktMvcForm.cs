@@ -1,11 +1,11 @@
 namespace ZbW.ProgrammingFoundationShort.Challenges.Module07.Aufgabe3_KontaktmanagerMvc;
 
 /// <summary>
-///   Aufgabe 3 – Kontaktmanager MVC (⭐⭐⭐ Schwer)
+///   Aufgabe 3 – Kontaktmanager mit getrennter UI und Logik (⭐⭐⭐ Schwer)
 /// </summary>
 public partial class KontaktMvcForm : Form
 {
-  private readonly ContactController _controller = new();
+  private readonly ContactManager _contactManager = new();
 
   public KontaktMvcForm()
   {
@@ -30,14 +30,14 @@ public partial class KontaktMvcForm : Form
       return;
     }
 
-    _controller.Add(contact);
+    _contactManager.Add(contact);
     AktualisiereAusgabe();
     TxtFirst.Clear(); TxtLast.Clear(); TxtPhone.Clear(); TxtEmail.Clear(); TxtBirthday.Clear();
   }
 
   private void CmdSuchen_Click(object sender, EventArgs e)
   {
-    var result = _controller.Search(TxtSuche.Text.Trim());
+    var result = _contactManager.Search(TxtSuche.Text.Trim());
     TxtAusgabe.Clear();
     foreach (var c in result)
       TxtAusgabe.AppendText(c + "\r\n");
@@ -51,7 +51,7 @@ public partial class KontaktMvcForm : Form
   private void AktualisiereAusgabe()
   {
     TxtAusgabe.Clear();
-    foreach (var c in _controller.GetAll())
+    foreach (var c in _contactManager.GetAll())
       TxtAusgabe.AppendText(c + "\r\n");
   }
 }

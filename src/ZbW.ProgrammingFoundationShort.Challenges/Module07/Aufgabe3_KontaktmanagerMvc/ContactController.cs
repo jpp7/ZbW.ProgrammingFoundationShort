@@ -1,7 +1,7 @@
 namespace ZbW.ProgrammingFoundationShort.Challenges.Module07.Aufgabe3_KontaktmanagerMvc;
 
-/// <summary>Controller für die Kontaktverwaltung (MVC-Muster).</summary>
-public class ContactController
+/// <summary>Kontaktlogik ohne WinForms-Abhängigkeit.</summary>
+public class ContactManager
 {
   private readonly List<Contact> _contacts = new();
 

@@ -6,11 +6,11 @@
 |---|----------------------|----------|---------------|
 | 1 | ReferenzExperiment   | WinForms | Einfach       |
 | 2 | EqualsImplementieren | WinForms | Mittel        |
-| 3 | KontaktmanagerMvc    | WinForms | Schwer        |
+| 3 | Kontaktmanager       | WinForms | Schwer        |
 | 4 | DeepCopy             | WinForms | Bonus         |
 
 ## Inhalte
 
 - Referenzverhalten und Gleichheit
-- MVC-nahe Kontaktverwaltung
+- Kontaktverwaltung mit getrennter UI und Kontaktlogik
 - Shallow Copy und Deep Copy
