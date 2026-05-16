@@ -1,15 +1,21 @@
-# Modul 04 – Arrays & Methoden
+# Modul 04 - Arrays & Methoden
 
 ## Lernziele
-- Arrays deklarieren und befüllen
+
+- Arrays deklarieren, befüllen und auswerten
 - Methoden mit Parametern und Rückgabewerten schreiben
-- Array.Sort und eigene Sortierlogik
-- Mehrdimensionale Arrays (2D)
+- Einfache Statistikfunktionen implementieren
+- Mehrdimensionale Arrays verwenden
 
 ## Aufträge
 
-| # | Name | Typ | Schwierigkeit |
-|---|------|-----|---------------|
-| 1 | StatistikRechner | Konsole | ⭐ Einfach |
-| 2 | NotenVerwaltung | WinForms | ⭐⭐ Mittel |
-| 3 | MatrixMultiplikation | Konsole | ⭐⭐⭐ Schwer |
+| # | Name                 | Typ      | Schwierigkeit |
+|---|----------------------|----------|---------------|
+| 1 | StatistikRechner     | Konsole  | Einfach       |
+| 2 | NotenVerwaltung      | WinForms | Mittel        |
+| 3 | MatrixMultiplikation | Konsole  | Erweitert     |
+
+## Hinweise
+
+- Die Studentendateien enthalten bewusst unvollständige Methoden.
+- Die Musterlösung liegt jeweils in `_Loesung`.
