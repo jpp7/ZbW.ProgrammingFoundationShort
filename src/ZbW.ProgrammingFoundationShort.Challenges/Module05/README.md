@@ -1,10 +1,15 @@
-# Modul 05 – Collections & Methoden Vertiefung (Challenges)
+# Modul 05 - Collections & Methoden Vertiefung (Challenges)
 
 ## Hausaufgaben
 
-| # | Name | Schwierigkeit |
-|---|------|---------------|
-| 1 | Einkaufsliste | ⭐ Einfach |
-| 2 | Woerterbuch | ⭐⭐ Mittel |
-| 3 | InventarVerwaltung | ⭐⭐ Mittel |
-| 4 | HaeufigkeitsAnalyse | ⭐⭐⭐ Schwer |
+| # | Name                | Typ      | Schwierigkeit |
+|---|---------------------|----------|---------------|
+| 1 | Einkaufsliste       | WinForms | Einfach       |
+| 2 | Woerterbuch         | WinForms | Mittel        |
+| 3 | InventarVerwaltung  | WinForms | Schwer        |
+| 4 | HaeufigkeitsAnalyse | WinForms | Bonus         |
+
+## Inhalte
+
+- `List<T>` und `Dictionary<TKey,TValue>`
+- Häufigkeiten, Inventarlisten und Suchfunktionen

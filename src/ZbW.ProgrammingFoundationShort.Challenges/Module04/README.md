@@ -1,10 +1,15 @@
-# Modul 04 – Arrays & Methoden (Challenges)
+# Modul 04 - Arrays & Methoden (Challenges)
 
 ## Hausaufgaben
 
-| # | Name | Schwierigkeit |
-|---|------|---------------|
-| 1 | TemperaturAuswertung | ⭐ Einfach |
-| 2 | Wortzaehler | ⭐⭐ Mittel |
-| 3 | MatrizenRechner | ⭐⭐⭐ Schwer |
-| 4 | SortierVisualisierung | ⭐⭐⭐ Schwer |
+| # | Name                  | Typ      | Schwierigkeit |
+|---|-----------------------|----------|---------------|
+| 1 | TemperaturAuswertung  | WinForms | Einfach       |
+| 2 | Wortzaehler           | WinForms | Mittel        |
+| 3 | MatrizenRechner       | WinForms | Schwer        |
+| 4 | SortierVisualisierung | WinForms | Bonus         |
+
+## Inhalte
+
+- Arrays und Textanalyse
+- Matrixberechnung und einfache Sortierdarstellung

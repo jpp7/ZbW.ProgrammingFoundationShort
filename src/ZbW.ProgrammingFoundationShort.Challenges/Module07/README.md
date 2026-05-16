@@ -1,10 +1,16 @@
-# Modul 07 – Referenzen & Vergleiche (Challenges)
+# Modul 07 - Referenzen & Vergleiche (Challenges)
 
 ## Hausaufgaben
 
-| # | Name | Schwierigkeit |
-|---|------|---------------|
-| 1 | ReferenzExperiment | ⭐⭐ Mittel |
-| 2 | EqualsImplementieren | ⭐⭐ Mittel |
-| 3 | KontaktmanagerMvc | ⭐⭐⭐ Schwer |
-| 4 | DeepCopy | ⭐⭐⭐ Schwer |
+| # | Name                 | Typ      | Schwierigkeit |
+|---|----------------------|----------|---------------|
+| 1 | ReferenzExperiment   | WinForms | Einfach       |
+| 2 | EqualsImplementieren | WinForms | Mittel        |
+| 3 | KontaktmanagerMvc    | WinForms | Schwer        |
+| 4 | DeepCopy             | WinForms | Bonus         |
+
+## Inhalte
+
+- Referenzverhalten und Gleichheit
+- MVC-nahe Kontaktverwaltung
+- Shallow Copy und Deep Copy

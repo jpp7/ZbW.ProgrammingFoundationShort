@@ -1,10 +1,15 @@
-# Modul 02 – Kontrollstrukturen (Challenges)
+# Modul 02 - Kontrollstrukturen (Challenges)
 
 ## Hausaufgaben
 
-| # | Name | Schwierigkeit |
-|---|------|---------------|
-| 1 | Ampelsteuerung | ⭐ Einfach |
-| 2 | Notenrechner | ⭐⭐ Mittel |
-| 3 | Versicherungsprämie | ⭐⭐⭐ Schwer |
-| 4 | Taschenrechner mit Verlauf | ⭐⭐⭐ Schwer |
+| # | Name                  | Typ      | Schwierigkeit |
+|---|-----------------------|----------|---------------|
+| 1 | Ampelsteuerung        | WinForms | Einfach       |
+| 2 | Notenrechner          | WinForms | Mittel        |
+| 3 | Versicherungspraemie  | WinForms | Schwer        |
+| 4 | TaschenrechnerVerlauf | WinForms | Bonus         |
+
+## Inhalte
+
+- `if`/`else`, `switch`, RadioButtons und CheckBoxen
+- einfache Entscheidungslogik in WinForms

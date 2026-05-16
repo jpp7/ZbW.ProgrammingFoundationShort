@@ -1,10 +1,15 @@
-# Modul 03 – Schleifen, Random & Fehlerbehandlung (Challenges)
+# Modul 03 - Schleifen, Random & Fehlerbehandlung (Challenges)
 
 ## Hausaufgaben
 
-| # | Name | Schwierigkeit |
-|---|------|---------------|
-| 1 | Multiplikationstabelle | ⭐ Einfach |
-| 2 | Zahlen-Ratespiel | ⭐⭐ Mittel |
-| 3 | PasswortGenerator | ⭐⭐ Mittel |
-| 4 | StatistikSimulator | ⭐⭐⭐ Schwer |
+| # | Name                   | Typ      | Schwierigkeit |
+|---|------------------------|----------|---------------|
+| 1 | Multiplikationstabelle | WinForms | Einfach       |
+| 2 | ZahlenRatespiel        | WinForms | Mittel        |
+| 3 | PasswortGenerator      | WinForms | Schwer        |
+| 4 | StatistikSimulator     | WinForms | Bonus         |
+
+## Inhalte
+
+- Schleifen und Zufallszahlen
+- Eingabevalidierung und Statistikberechnung
