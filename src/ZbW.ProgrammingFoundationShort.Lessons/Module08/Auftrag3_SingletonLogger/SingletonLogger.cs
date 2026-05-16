@@ -1,15 +1,15 @@
 namespace ZbW.ProgrammingFoundationShort.Lessons.Module08.Auftrag3_SingletonLogger;
 
-public sealed class SingletonLogger
+public sealed class AppLogger
 {
-  private static readonly SingletonLogger InstanceValue = new SingletonLogger();
+  private static readonly AppLogger InstanceValue = new AppLogger();
   private readonly List<string> messages = new List<string>();
 
-  private SingletonLogger()
+  private AppLogger()
   {
   }
 
-  public static SingletonLogger Instance
+  public static AppLogger Instance
   {
     get { return InstanceValue; }
   }

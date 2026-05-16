@@ -1,15 +1,15 @@
 namespace ZbW.ProgrammingFoundationShort.Lessons.Module08.Auftrag3_SingletonLogger._Loesung;
 
-public sealed class SingletonLoggerLoesung
+public sealed class AppLoggerLoesung
 {
-  private static readonly SingletonLoggerLoesung InstanceValue = new SingletonLoggerLoesung();
+  private static readonly AppLoggerLoesung InstanceValue = new AppLoggerLoesung();
   private readonly List<string> messages = new List<string>();
 
-  private SingletonLoggerLoesung()
+  private AppLoggerLoesung()
   {
   }
 
-  public static SingletonLoggerLoesung Instance
+  public static AppLoggerLoesung Instance
   {
     get { return InstanceValue; }
   }
@@ -21,7 +21,7 @@ public sealed class SingletonLoggerLoesung
 
   public void Log(string message)
   {
-    messages.Add($"{DateTime.Now:HH:mm:ss} – {message}");
+    messages.Add($"{DateTime.Now:HH:mm:ss} - {message}");
   }
 
   public void Clear()
