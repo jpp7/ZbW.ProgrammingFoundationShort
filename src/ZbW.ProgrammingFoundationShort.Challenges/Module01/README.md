@@ -1,35 +1,15 @@
-# Modul 01 – Variablen, Datentypen & Operatoren (Challenges / Musterlösungen)
+# Modul 01 - Variablen, Datentypen & Operatoren (Challenges)
 
-> **Hausaufgaben – Musterlösungen** | Programming Foundation Short | ZbW
+## Hausaufgaben
 
----
+| # | Name             | Typ      | Schwierigkeit |
+|---|------------------|----------|---------------|
+| 1 | Bmi              | WinForms | Einfach       |
+| 2 | Waehrungsrechner | WinForms | Mittel        |
+| 3 | ZahlenAnalyse    | WinForms | Schwer        |
+| 4 | Einheitenrechner | WinForms | Bonus         |
 
-## Aufgaben-Übersicht
+## Hinweise
 
-| Nr. | Titel            | Schwierigkeit | Zeit     |
-|-----|------------------|---------------|----------|
-| 1   | BMI-Rechner      | ⭐             | ~45 Min. |
-| 2   | Währungsrechner  | ⭐⭐            | ~75 Min. |
-| 3   | Zahlen-Analyse   | ⭐⭐⭐           | ~90 Min. |
-| 4   | Einheitenrechner | ⭐⭐⭐⭐ Bonus    | ~60 Min. |
-
----
-
-## Wie starte ich eine Form?
-
-Öffne `Program.cs` im Challenges-Projekt und kommentiere die gewünschte Zeile ein:
-
-```csharp
-Application.Run(new Module01.Aufgabe1_Bmi.BmiForm());
-```
-
----
-
-## Wichtige Konzepte in dieser Lösung
-
-- `double.TryParse` / `decimal.TryParse` für sichere Eingabekonvertierung
-- `const` für unveränderliche Umrechnungsfaktoren
-- `MessageBox.Show` für Fehlermeldungen
-- String-Interpolation: `$"{wert:F2}"`
-- Modulo-Operator `%` (Aufgabe 3)
-- `GroupBox` als Container-Steuerelement (Aufgabe 4)
+- Challenges enthalten vollständige Musterlösungen.
+- Starte die gewünschte Aufgabe über `Challenges/Program.cs`.
