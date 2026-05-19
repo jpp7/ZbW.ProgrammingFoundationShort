@@ -51,12 +51,12 @@ internal static class Program
     // ---- Modul 08 ----
     // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module08.Auftrag1_StatischerZaehler.StatischerZaehlerDemo.RunDemo());
     // Application.Run(new ZbW.ProgrammingFoundationShort.Lessons.Module08.Auftrag2_MathUtils.MathUtilsForm());
-    // Application.Run(new ZbW.ProgrammingFoundationShort.Lessons.Module08.Auftrag3_SingletonLogger.TrafficLightForm());
+    // Application.Run(new ZbW.ProgrammingFoundationShort.Lessons.Module08.Auftrag3_TrafficLightLogger.TrafficLightForm());
 
     // ---- Modul 09 ----
     // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag1_AnimalHierarchy.AnimalHierarchy.RunDemo());
     // Console.WriteLine(new ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag2_AbstractShape.Circle { Color = "Rot", Radius = 5 }.Describe());
-    // ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag3_PrintableInterface.PrintableDemo.PrintAll(new List<ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag3_PrintableInterface.IPrintable>());
+    // ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag3_MediaHierarchy.MediaDemo.PrintAll(new List<ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag3_MediaHierarchy.MediaItem>());
 
     // ---- Modul 10 ----
     // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag1_SucheVergleichen.SucheVergleichen.LinearSearch(new[] { 3, 1, 7, 5, 9 }, 7));
@@ -64,3 +64,4 @@ internal static class Program
     // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag3_SortierVisualisierung.SortierVisualisierung.BubbleSortSteps(new[] { 64, 34, 25, 12, 22, 11, 90 }));
   }
 }
+

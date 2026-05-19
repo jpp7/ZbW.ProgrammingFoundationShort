@@ -34,6 +34,17 @@ src/
 | 09 | Vererbung & Polymorphismus | 3 | 4 |
 | 10 | Algorithmen & Datenstrukturen | 3 | 4 |
 
+## Für Studierende
+
+Erstelle zuerst einen **Fork** dieses Repositories auf deinem eigenen GitHub-Account und klone danach deinen Fork lokal:
+
+```powershell
+git clone https://github.com/DEIN_USERNAME/ZbW.ProgrammingFoundationShort.git
+cd ZbW.ProgrammingFoundationShort
+```
+
+Arbeite in deinem Fork, committe regelmässig und pushe deine Lösungen auf deinen GitHub-Account.
+
 ## Start
 
 Öffne `src/ZbW.ProgrammingFoundationShort.sln` in Visual Studio oder Rider.
@@ -53,3 +64,4 @@ dotnet build src\ZbW.ProgrammingFoundationShort.sln --ignore-failed-sources
 ```
 
 Der Zusatz `--ignore-failed-sources` ist nützlich, falls lokal ein privater NuGet-Feed konfiguriert ist, der ohne Anmeldung Warnungen erzeugt.
+

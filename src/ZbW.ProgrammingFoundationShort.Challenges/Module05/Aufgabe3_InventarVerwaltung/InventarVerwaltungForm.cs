@@ -74,7 +74,7 @@ public partial class InventarVerwaltungForm : Form
   {
     LstInventar.Items.Clear();
     int gesamt = 0;
-    foreach (var kvp in _inventar.OrderBy(k => k.Key))
+    foreach (var kvp in _inventar)
     {
       LstInventar.Items.Add($"{kvp.Key,-20} {kvp.Value,6} Stück");
       gesamt += kvp.Value;

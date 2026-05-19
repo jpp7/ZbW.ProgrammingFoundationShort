@@ -4,8 +4,8 @@
 
 - `List<T>` und `Dictionary<TKey,TValue>` einsetzen
 - Collections in WinForms anzeigen und aktualisieren
-- LINQ-Grundoperationen verwenden
-- Daten auswerten und formatieren
+- Dictionary-Daten mit `foreach` und `if` auswerten
+- LINQ als Bonusidee erkennen
 
 ## Aufträge
 
@@ -17,5 +17,5 @@
 
 ## Hinweise
 
-- Die Aufgaben bauen auf Arrays und Methoden aus Modul 04 auf.
+- Die Aufgaben bauen auf Arrays und Methoden aus Modul 04 auf. LINQ ist nur Bonus, nicht Pflicht.
 - `_Loesung` enthält die vollständige Dozentenlösung.

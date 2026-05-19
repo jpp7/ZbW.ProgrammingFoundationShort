@@ -16,18 +16,18 @@ public class Person
     get => _name;
     set
     {
-      // TODO: if empty → throw ArgumentException
+      // TODO: if empty -> throw ArgumentException
       _name = value;
     }
   }
 
-  // TODO: Age-Property mit Validierung (0–150)
+  // TODO: Age-Property mit Validierung (0-120)
   public int Age
   {
     get => _age;
     set
     {
-      // TODO: if < 0 || > 150 → throw ArgumentOutOfRangeException
+      // TODO: if < 0 || > 120 -> throw ArgumentOutOfRangeException
       _age = value;
     }
   }
@@ -38,12 +38,12 @@ public class Person
     get => _email;
     set
     {
-      // TODO: if !Contains("@") → throw ArgumentException
+      // TODO: if !Contains("@") -> throw ArgumentException
       _email = value;
     }
   }
 
-  // TODO: Equals / GetHashCode überschreiben (nach Name + Email)
+  // TODO: Konstruktor mit name, age und email ergänzen.
 
   public override string ToString()
   {

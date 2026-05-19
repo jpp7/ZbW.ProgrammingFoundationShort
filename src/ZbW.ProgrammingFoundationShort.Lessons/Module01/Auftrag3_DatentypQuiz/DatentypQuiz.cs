@@ -43,8 +43,7 @@ public static class DatentypQuiz
     //         var stopwatch = new System.Diagnostics.Stopwatch();
     //         stopwatch.Start();
 
-    int punkte = 0;
-
+    // int punkte = 0; // TODO: aktivieren, wenn die Schleife implementiert wird.\r\n
     // TODO 3: Schleife über alle Fragen
     //         for (int i = 0; i < fragen.Length; i++)
     //         {
@@ -63,3 +62,4 @@ public static class DatentypQuiz
     //         Console.WriteLine($"Zeit: {stopwatch.Elapsed.TotalSeconds:F1} Sekunden");
   }
 }
+

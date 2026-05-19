@@ -51,7 +51,7 @@ internal static class Program
     // ---- Modul 07 ----
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module07.Aufgabe1_ReferenzExperiment.ReferenzExperimentForm());
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module07.Aufgabe2_EqualsImplementieren.EqualsForm());
-    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module07.Aufgabe3_KontaktmanagerMvc.KontaktMvcForm());
+    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module07.Aufgabe3_Kontaktmanager.KontaktmanagerForm());
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module07.Aufgabe4_DeepCopy.DeepCopyForm());
 
     // ---- Modul 08 ----

@@ -13,5 +13,6 @@
 
 - lineare Suche und binäre Suche mit Vergleichszähler
 - Browser-Verlauf mit zwei `Stack<string>`-Instanzen
-- Bubble Sort, Selection Sort und `Array.Sort` mit Zeitmessung
-- rekursive, iterative und memoized Fibonacci-Berechnung
+- Bubble Sort und `Array.Sort` mit Zeitmessung; Selection Sort als Zusatz/Bonus
+- rekursive, iterative und memoized Fibonacci-Berechnung nur in der Bonusaufgabe
+

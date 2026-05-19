@@ -5,7 +5,7 @@
 - `static` Felder, Properties und Methoden einsetzen
 - Statische Utility-Klassen schreiben
 - `const` und `static readonly` unterscheiden
-- Singleton-Logger und timerbasierte WinForms-Logik verstehen
+- Statischen Logger und timerbasierte WinForms-Logik verstehen
 
 ## Aufträge
 
@@ -13,9 +13,10 @@
 |---|-------------------|----------|---------------|
 | 1 | StatischerZaehler | Konsole  | Einfach       |
 | 2 | MathUtils         | WinForms | Mittel        |
-| 3 | SingletonLogger   | WinForms | Erweitert     |
+| 3 | TrafficLightLogger | WinForms | Erweitert     |
 
 ## Hinweise
 
-- Auftrag 3 enthält `TrafficLightColor`, `TrafficLight`, Timer, Panel-Farbe und `AppLogger`.
+- Auftrag 3 enthält `TrafficLightColor`, `TrafficLight`, Timer, Panel-Farbe und einen statischen `AppLogger`.
 - Vollständige Varianten liegen in `_Loesung`.
+- Bonus: AppLogger kann als Singleton-Variante diskutiert werden, ist aber kein Pflichtteil.

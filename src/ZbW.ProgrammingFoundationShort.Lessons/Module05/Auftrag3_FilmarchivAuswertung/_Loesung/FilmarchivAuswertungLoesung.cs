@@ -1,13 +1,12 @@
 namespace ZbW.ProgrammingFoundationShort.Lessons.Module05.Auftrag3_FilmarchivAuswertung;
 
 /// <summary>
-///   Lösung: Auftrag 3 – Filmarchiv-Auswertung mit LINQ
+///   Lösung: Auftrag 3 – Filmarchiv-Auswertung ohne LINQ
 /// </summary>
 public static class FilmarchivAuswertungLoesung
 {
   public static void Start()
   {
-    // Filmarchiv: Name → Erscheinungsjahr
     var filme = new Dictionary<string, int>
     {
       ["The Shawshank Redemption"] = 1994,
@@ -22,21 +21,42 @@ public static class FilmarchivAuswertungLoesung
 
     Console.WriteLine("=== Filmarchiv-Auswertung ===\n");
 
-    // Alle Filme nach 2000
-    Console.WriteLine("Filme nach 2000:");
-    var nachZweitausend = filme.Where(f => f.Value > 2000).OrderBy(f => f.Value);
-    foreach (var film in nachZweitausend)
+    Console.WriteLine("Alle Filme:");
+    foreach (KeyValuePair<string, int> film in filme)
+    {
       Console.WriteLine($"  {film.Key} ({film.Value})");
+    }
 
-    // Alphabetisch sortiert
-    Console.WriteLine("\nAlphabetisch sortiert:");
-    foreach (var film in filme.OrderBy(f => f.Key))
-      Console.WriteLine($"  {film.Key} ({film.Value})");
+    Console.WriteLine("\nFilme ab 2000:");
+    foreach (KeyValuePair<string, int> film in filme)
+    {
+      if (film.Value >= 2000)
+      {
+        Console.WriteLine($"  {film.Key} ({film.Value})");
+      }
+    }
 
-    // Statistiken
-    int fruehestes = filme.Min(f => f.Value);
-    int spaetestes = filme.Max(f => f.Value);
-    int anzahlNach2010 = filme.Count(f => f.Value > 2010);
+    int fruehestes = int.MaxValue;
+    int spaetestes = int.MinValue;
+    int anzahlNach2010 = 0;
+
+    foreach (KeyValuePair<string, int> film in filme)
+    {
+      if (film.Value < fruehestes)
+      {
+        fruehestes = film.Value;
+      }
+
+      if (film.Value > spaetestes)
+      {
+        spaetestes = film.Value;
+      }
+
+      if (film.Value > 2010)
+      {
+        anzahlNach2010++;
+      }
+    }
 
     Console.WriteLine($"\nFrühstes Erscheinungsjahr: {fruehestes}");
     Console.WriteLine($"Spätestes Erscheinungsjahr: {spaetestes}");

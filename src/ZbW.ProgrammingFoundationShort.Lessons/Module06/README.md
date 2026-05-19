@@ -5,7 +5,7 @@
 - Eigene Klassen mit Properties, Konstruktoren und Methoden erstellen
 - Objektzustand kapseln
 - Validierung in `set`-Accessors umsetzen
-- `Equals`, `GetHashCode` und `ToString` überschreiben
+- `ToString` überschreiben; `Equals`/`GetHashCode` nur als Bonusidee einordnen
 
 ## Aufträge
 
@@ -19,3 +19,4 @@
 
 - Studentencode bleibt als TODO-Stubs erhalten.
 - Lösungen liegen direkt daneben im Ordner `_Loesung`.
+

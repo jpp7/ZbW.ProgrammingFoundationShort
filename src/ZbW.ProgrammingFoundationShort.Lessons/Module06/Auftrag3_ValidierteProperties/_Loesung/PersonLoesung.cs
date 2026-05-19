@@ -1,7 +1,7 @@
 namespace ZbW.ProgrammingFoundationShort.Lessons.Module06.Auftrag3_ValidierteProperties;
 
 /// <summary>
-///   Lösung: Person-Klasse mit validierenden Properties und Equals.
+///   Lösung: Person-Klasse mit validierenden Properties.
 /// </summary>
 public class PersonLoesung
 {
@@ -25,8 +25,8 @@ public class PersonLoesung
     get => _age;
     set
     {
-      if (value < 0 || value > 150)
-        throw new ArgumentOutOfRangeException(nameof(value), "Alter muss zwischen 0 und 150 liegen.");
+      if (value < 0 || value > 120)
+        throw new ArgumentOutOfRangeException(nameof(value), "Alter muss zwischen 0 und 120 liegen.");
       _age = value;
     }
   }
@@ -42,16 +42,11 @@ public class PersonLoesung
     }
   }
 
-  public override bool Equals(object? obj)
+  public PersonLoesung(string name, int age, string email)
   {
-    if (obj is PersonLoesung other)
-      return Name == other.Name && Email == other.Email;
-    return false;
-  }
-
-  public override int GetHashCode()
-  {
-    return HashCode.Combine(Name, Email);
+    Name = name;
+    Age = age;
+    Email = email;
   }
 
   public override string ToString()

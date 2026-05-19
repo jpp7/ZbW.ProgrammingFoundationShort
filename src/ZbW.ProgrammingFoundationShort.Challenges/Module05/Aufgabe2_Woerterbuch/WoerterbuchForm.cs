@@ -51,7 +51,7 @@ public partial class WoerterbuchForm : Form
   private void CmdAlleAnzeigen_Click(object sender, EventArgs e)
   {
     TxtAusgabe.Clear();
-    foreach (var kvp in _woerterbuch.OrderBy(k => k.Key))
+    foreach (var kvp in _woerterbuch)
       TxtAusgabe.AppendText($"{kvp.Key,-20} → {kvp.Value}\r\n");
   }
 }
