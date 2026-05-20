@@ -6,17 +6,23 @@ namespace ZbW.ProgrammingFoundationShort.Lessons.Module06.Auftrag2_FahrzeugVerwa
 
 public class Vehicle
 {
-  public string Make { get; set; } = "";
-  public string Model { get; set; } = "";
+  public string Make { get; set; }
+  public string Model { get; set; }
   public int Year { get; set; }
   public decimal Price { get; set; }
 
-  // TODO: Age-Property (berechnete Property: DateTime.Now.Year - Year)
+  public Vehicle(string make, string model, int year, decimal price)
+  {
+    Make = make;
+    Model = model;
+    Year = year;
+    Price = price;
+  }
+
   public int Age => DateTime.Now.Year - Year;
 
-  // TODO: Description()-Methode: $"{Year} {Make} {Model} ({Price:C})"
   public string Description()
   {
-    return $"{Year} {Make} {Model} – {Price:C} (Alter: {Age} Jahre)";
+    return $"{Year} {Make} {Model} – {Price:F2} CHF (Alter: {Age} Jahre)";
   }
 }

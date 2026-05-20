@@ -1,25 +1,26 @@
 namespace ZbW.ProgrammingFoundationShort.Lessons.Module08.Auftrag1_StatischerZaehler;
 
 // ============================================================
-// AUFTRAG 1 – StatischerZaehler (⭐ Einfach | ~10 Min.)
+// AUFTRAG 1 – Statischer Zähler (⭐ Einfach | ~8 Min.)
 //
 // Zählt, wie viele User-Objekte erstellt wurden.
 //
 // Anforderungen:
-//   - UserStatic.cs: static int _userCount im Konstruktor ++
-//   - 3 User erstellen, UserCount ausgeben
+//   - User.cs: static int UserCount im Konstruktor erhöhen
+//   - 3 User erstellen, User.UserCount ausgeben
+//   - zeigen, dass der Zähler zur Klasse gehört
 // ============================================================
 
 public static class StatischerZaehlerDemo
 {
   public static void Start()
   {
-    // TODO 1: Drei UserStatic-Objekte erstellen
-    //         var u1 = new UserStatic("Anna");
-    //         var u2 = new UserStatic("Bob");
-    //         var u3 = new UserStatic("Carla");
+    // TODO 1: Drei User-Objekte erstellen
+    //         var u1 = new User("Anna");
+    //         var u2 = new User("Bob");
+    //         var u3 = new User("Carla");
 
-    // TODO 2: Console.WriteLine($"Erstellte User: {UserStatic.UserCount}");
+    // TODO 2: Console.WriteLine($"Erstellte User: {User.UserCount}");
     //         → Sollte 3 ausgeben
   }
 }

@@ -6,19 +6,18 @@ namespace ZbW.ProgrammingFoundationShort.Lessons.Module06.Auftrag1_BankAccount;
 
 public class BankAccount
 {
-  // TODO: Owner (string), Balance (decimal, readonly via Property)
-  // TODO: Konstruktor(string owner, decimal startBalance)
+  // TODO: Owner (string), Balance (decimal, private setter)
+  // TODO: Konstruktor(string owner, decimal initialBalance = 0)
   // TODO: void Deposit(decimal amount) – Betrag > 0 prüfen
-  // TODO: bool Withdraw(decimal amount) – Betrag > 0 und <= Balance prüfen, return bool
-  // TODO: override ToString()
+  // TODO: bool Withdraw(decimal amount) – false wenn nicht genug Guthaben
+  // TODO: override ToString(): $"[{Owner}] Saldo: {Balance:F2} CHF"
 
   public string Owner { get; private set; } = "";
   public decimal Balance { get; private set; }
 
-  // Konstruktor zum Überschreiben
-  public BankAccount(string owner, decimal startBalance)
+  public BankAccount(string owner, decimal initialBalance = 0)
   {
-    // TODO: Owner und Balance setzen (startBalance >= 0 prüfen)
+    // TODO: Owner und Balance setzen (initialBalance >= 0 prüfen)
     throw new NotImplementedException("TODO: Konstruktor implementieren");
   }
 
@@ -36,7 +35,7 @@ public class BankAccount
 
   public override string ToString()
   {
-    // TODO: $"Konto {Owner}: {Balance:C}"
+    // TODO: $"[{Owner}] Saldo: {Balance:F2} CHF"
     throw new NotImplementedException("TODO: ToString implementieren");
   }
 }

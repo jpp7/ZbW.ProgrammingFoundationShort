@@ -23,7 +23,7 @@ public partial class FahrzeugVerwaltungForm : Form
 
   private void CmdHinzufuegen_Click(object sender, EventArgs e)
   {
-    // TODO 2: Vehicle-Objekt aus Eingabefeldern erstellen
+    // TODO 2: Vehicle-Objekt mit Konstruktor aus Eingabefeldern erstellen
     // TODO 3: Zur Liste hinzufügen, ListBox aktualisieren
   }
 

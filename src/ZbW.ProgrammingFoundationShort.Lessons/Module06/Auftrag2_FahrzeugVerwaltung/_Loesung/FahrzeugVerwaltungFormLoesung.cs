@@ -28,13 +28,7 @@ public partial class FahrzeugVerwaltungFormLoesung : Form
       return;
     }
 
-    var fahrzeug = new Vehicle
-    {
-      Make = TxtMake.Text.Trim(),
-      Model = TxtModel.Text.Trim(),
-      Year = year,
-      Price = price
-    };
+    var fahrzeug = new Vehicle(TxtMake.Text.Trim(), TxtModel.Text.Trim(), year, price);
 
     _fahrzeuge.Add(fahrzeug);
     AktualisiereListBox();

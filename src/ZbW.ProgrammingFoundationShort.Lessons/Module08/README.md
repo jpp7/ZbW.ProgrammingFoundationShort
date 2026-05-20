@@ -17,6 +17,7 @@
 
 ## Hinweise
 
+- Auftrag 1 verwendet eine Klasse `User` mit statischem `UserCount`.
 - Auftrag 3 enthält `TrafficLightColor`, `TrafficLight`, Timer, Panel-Farbe und einen statischen `AppLogger`.
 - Vollständige Varianten liegen in `_Loesung`.
 - Bonus: AppLogger kann als Singleton-Variante diskutiert werden, ist aber kein Pflichtteil.

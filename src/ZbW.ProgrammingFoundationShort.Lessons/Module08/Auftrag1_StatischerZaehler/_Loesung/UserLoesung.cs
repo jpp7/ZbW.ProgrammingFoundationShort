@@ -1,7 +1,7 @@
 namespace ZbW.ProgrammingFoundationShort.Lessons.Module08.Auftrag1_StatischerZaehler;
 
 /// <summary>Lösung: User mit statischem Zähler.</summary>
-public class UserStaticLoesung
+public class UserLoesung
 {
   private static int _userCount = 0;
 
@@ -9,7 +9,7 @@ public class UserStaticLoesung
 
   public string Name { get; set; }
 
-  public UserStaticLoesung(string name)
+  public UserLoesung(string name)
   {
     _userCount++;
     Name = name;

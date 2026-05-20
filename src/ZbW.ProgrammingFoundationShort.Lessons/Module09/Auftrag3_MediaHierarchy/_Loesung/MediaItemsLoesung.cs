@@ -39,6 +39,21 @@ public sealed class DVDLoesung : MediaItemLoesung
 
 public static class MediaDemoLoesung
 {
+  public static void Start()
+  {
+    var media = new List<MediaItemLoesung>
+    {
+      new BookLoesung { Title = "Clean Code", Author = "Robert C. Martin" },
+      new BookLoesung { Title = "The Pragmatic Programmer", Author = "Andrew Hunt" },
+      new MagazineLoesung { Title = "c't", IssueNumber = 12 },
+      new MagazineLoesung { Title = "dotnetpro", IssueNumber = 5 },
+      new DVDLoesung { Title = "Inception", LengthMinutes = 148 },
+      new DVDLoesung { Title = "The Matrix", LengthMinutes = 136 }
+    };
+
+    PrintAll(media);
+  }
+
   public static void PrintAll(List<MediaItemLoesung> items)
   {
     foreach (MediaItemLoesung item in items)

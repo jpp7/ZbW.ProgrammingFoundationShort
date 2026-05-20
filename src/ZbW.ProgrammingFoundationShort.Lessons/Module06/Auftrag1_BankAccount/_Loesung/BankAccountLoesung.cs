@@ -8,15 +8,15 @@ public class BankAccountLoesung
   public string Owner { get; private set; }
   public decimal Balance { get; private set; }
 
-  public BankAccountLoesung(string owner, decimal startBalance)
+  public BankAccountLoesung(string owner, decimal initialBalance = 0)
   {
     if (string.IsNullOrWhiteSpace(owner))
       throw new ArgumentException("Kontoinhaber darf nicht leer sein.");
-    if (startBalance < 0)
+    if (initialBalance < 0)
       throw new ArgumentException("Startguthaben darf nicht negativ sein.");
 
-    Owner = owner;
-    Balance = startBalance;
+    Owner = owner.Trim();
+    Balance = initialBalance;
   }
 
   public void Deposit(decimal amount)
@@ -31,7 +31,7 @@ public class BankAccountLoesung
     if (amount <= 0)
       throw new ArgumentException("Abhebebetrag muss positiv sein.");
     if (amount > Balance)
-      return false; // Nicht genug Guthaben
+      return false;
 
     Balance -= amount;
     return true;
@@ -39,6 +39,6 @@ public class BankAccountLoesung
 
   public override string ToString()
   {
-    return $"Konto {Owner}: {Balance:C}";
+    return $"[{Owner}] Saldo: {Balance:F2} CHF";
   }
 }
