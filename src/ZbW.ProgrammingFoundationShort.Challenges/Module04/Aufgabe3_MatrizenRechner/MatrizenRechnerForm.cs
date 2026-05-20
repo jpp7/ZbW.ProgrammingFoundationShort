@@ -48,7 +48,8 @@ public partial class MatrizenRechnerForm : Form
       int[,] a = LesMatrixA();
       int[,] b = LesMatrixB();
       int[,] result = MatrixAddieren(a, b);
-      LblErgebnis.Text = "A + B =\r\n" + ShowMatrix(result);
+      LblErgebnis.Text = "A + B =\r\n";
+      ShowMatrix(result, LblErgebnis);
     }
     catch (FormatException ex)
     {
@@ -62,7 +63,8 @@ public partial class MatrizenRechnerForm : Form
     {
       int[,] a = LesMatrixA();
       int[,] result = Transpose(a);
-      LblErgebnis.Text = "A^T =\r\n" + ShowMatrix(result);
+      LblErgebnis.Text = "A^T =\r\n";
+      ShowMatrix(result, LblErgebnis);
     }
     catch (FormatException ex)
     {
@@ -79,25 +81,25 @@ public partial class MatrizenRechnerForm : Form
     return result;
   }
 
-  private static int[,] Transpose(int[,] a)
+  private static int[,] Transpose(int[,] matrix)
   {
     var result = new int[3, 3];
     for (int i = 0; i < 3; i++)
       for (int j = 0; j < 3; j++)
-        result[j, i] = a[i, j];
+        result[j, i] = matrix[i, j];
     return result;
   }
 
-  private static string ShowMatrix(int[,] m)
+  private static void ShowMatrix(int[,] matrix, Label label)
   {
-    var sb = new System.Text.StringBuilder();
+    var sb = new System.Text.StringBuilder(label.Text);
     for (int i = 0; i < 3; i++)
     {
       sb.Append("| ");
       for (int j = 0; j < 3; j++)
-        sb.Append($"{m[i, j],4} ");
+        sb.Append($"{matrix[i, j],4} ");
       sb.AppendLine("|");
     }
-    return sb.ToString();
+    label.Text = sb.ToString();
   }
 }

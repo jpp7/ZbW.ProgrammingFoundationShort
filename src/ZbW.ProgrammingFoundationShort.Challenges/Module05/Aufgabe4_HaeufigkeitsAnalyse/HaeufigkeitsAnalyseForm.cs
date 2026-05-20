@@ -1,8 +1,8 @@
 namespace ZbW.ProgrammingFoundationShort.Challenges.Module05.Aufgabe4_HaeufigkeitsAnalyse;
 
 /// <summary>
-///   Aufgabe 4 – Häufigkeits-Analyse (⭐⭐⭐ Schwer)
-///   Buchstabenhäufigkeit mit Dictionary und ASCII-Balken.
+///   Aufgabe 4 – Häufigkeits-Analyse (⭐⭐⭐⭐ Bonus)
+///   Buchstabenhäufigkeit mit Dictionary, params-Formatierung und Vergleichswerten.
 /// </summary>
 public partial class HaeufigkeitsAnalyseForm : Form
 {
@@ -21,43 +21,51 @@ public partial class HaeufigkeitsAnalyseForm : Form
       return;
     }
 
-    var haeufigkeit = CountLetters(text);
-    var sortiert = SortByFrequency(haeufigkeit);
+    Dictionary<char, int> haeufigkeit = CountLetters(text);
+    List<KeyValuePair<char, int>> sortiert = SortByFrequency(haeufigkeit);
+    KeyValuePair<char, int>[] topFive = sortiert.Take(5).ToArray();
 
     TxtErgebnis.Clear();
     TxtErgebnis.AppendText($"Analysierter Text: {text.Length} Zeichen\r\n");
     TxtErgebnis.AppendText("Top-5 Buchstaben:\r\n");
     TxtErgebnis.AppendText(new string('-', 35) + "\r\n");
-
-    int top = Math.Min(5, sortiert.Count);
-    for (int i = 0; i < top; i++)
-    {
-      var kvp = sortiert[i];
-      string balken = new string('█', kvp.Value);
-      TxtErgebnis.AppendText($"{kvp.Key}: {balken} ({kvp.Value})\r\n");
-    }
+    TxtErgebnis.AppendText(FormatOutput(topFive));
+    TxtErgebnis.AppendText("\r\nDeutsch häufig: e, n, i, s, r, a ...\r\n");
   }
 
   private static Dictionary<char, int> CountLetters(string text)
   {
     var result = new Dictionary<char, int>();
-    foreach (char c in text.ToLower())
+    foreach (char raw in text.ToLowerInvariant())
     {
-      if (char.IsLetter(c))
-      {
-        if (result.ContainsKey(c))
-          result[c]++;
-        else
-          result[c] = 1;
-      }
+      if (raw < 'a' || raw > 'z')
+        continue;
+
+      if (result.ContainsKey(raw))
+        result[raw]++;
+      else
+        result[raw] = 1;
     }
     return result;
   }
 
-  private static List<KeyValuePair<char, int>> SortByFrequency(Dictionary<char, int> haeufigkeit)
+  private static List<KeyValuePair<char, int>> SortByFrequency(Dictionary<char, int> dict)
   {
-    var liste = new List<KeyValuePair<char, int>>(haeufigkeit);
+    var liste = new List<KeyValuePair<char, int>>(dict);
     liste.Sort((a, b) => b.Value.CompareTo(a.Value));
     return liste;
+  }
+
+  private static string FormatOutput(params KeyValuePair<char, int>[] entries)
+  {
+    var builder = new System.Text.StringBuilder();
+
+    foreach (KeyValuePair<char, int> entry in entries)
+    {
+      string balken = new string('█', Math.Min(entry.Value, 40));
+      builder.AppendLine($"{entry.Key}: {balken} ({entry.Value})");
+    }
+
+    return builder.ToString();
   }
 }

@@ -31,7 +31,7 @@ partial class SortierVisualisierungForm
     CmdSortieren.Location = new Point(12, 75);
     CmdSortieren.Name = "CmdSortieren";
     CmdSortieren.Size = new Size(130, 28);
-    CmdSortieren.Text = "BubbleSort";
+    CmdSortieren.Text = "Sortieren";
     CmdSortieren.Click += CmdSortieren_Click;
 
     TxtErgebnis.Location = new Point(12, 115);

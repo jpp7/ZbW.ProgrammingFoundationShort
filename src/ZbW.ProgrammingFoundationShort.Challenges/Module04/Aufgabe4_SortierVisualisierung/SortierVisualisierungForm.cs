@@ -1,8 +1,8 @@
 namespace ZbW.ProgrammingFoundationShort.Challenges.Module04.Aufgabe4_SortierVisualisierung;
 
 /// <summary>
-///   Aufgabe 4 – Sortier-Visualisierung (⭐⭐⭐ Schwer)
-///   BubbleSort mit Vergleichszähler.
+///   Aufgabe 4 – Sortier-Visualisierung (⭐⭐⭐⭐ Bonus)
+///   BubbleSort mit Vergleichszähler und Vergleich zu Array.Sort.
 /// </summary>
 public partial class SortierVisualisierungForm : Form
 {
@@ -32,49 +32,53 @@ public partial class SortierVisualisierungForm : Form
       return;
     }
 
+    int[] bubbleSorted = BubbleSort(zahlen, out int vergleiche);
+    int[] systemSorted = zahlen.ToArray();
+    Array.Sort(systemSorted);
+
     TxtErgebnis.Clear();
-    TxtErgebnis.AppendText($"Eingabe: {string.Join(", ", zahlen)}\r\n");
+    TxtErgebnis.AppendText($"Original:    {string.Join(", ", zahlen)}\r\n");
+    TxtErgebnis.AppendText($"BubbleSort:  {string.Join(", ", bubbleSorted)}\r\n");
+    TxtErgebnis.AppendText($"Array.Sort:  {string.Join(", ", systemSorted)}\r\n");
     TxtErgebnis.AppendText(new string('-', 40) + "\r\n");
-
-    int vergleiche = BubbleSort(zahlen);
-
-    TxtErgebnis.AppendText($"Sortiert: {string.Join(", ", zahlen)}\r\n");
-    TxtErgebnis.AppendText(new string('-', 40) + "\r\n");
-    TxtErgebnis.AppendText($"Vergleiche: {vergleiche}\r\n");
-    TxtErgebnis.AppendText($"Sortiert korrekt: {IsSorted(zahlen)}\r\n");
+    TxtErgebnis.AppendText($"Vergleiche BubbleSort: {vergleiche}\r\n");
+    TxtErgebnis.AppendText($"BubbleSort sortiert korrekt: {IsSorted(bubbleSorted)}\r\n");
+    TxtErgebnis.AppendText($"Array.Sort sortiert korrekt: {IsSorted(systemSorted)}\r\n");
   }
 
-  private static int[] InputToArray(string eingabe)
+  private static int[] InputToArray(string text)
   {
-    string[] teile = eingabe.Split(',');
+    string[] teile = text.Split(',', StringSplitOptions.RemoveEmptyEntries);
     int[] zahlen = new int[teile.Length];
     for (int i = 0; i < teile.Length; i++)
       zahlen[i] = int.Parse(teile[i].Trim());
     return zahlen;
   }
 
-  private int BubbleSort(int[] arr)
+  private static int[] BubbleSort(int[] arr, out int vergleiche)
   {
-    int vergleiche = 0;
-    for (int i = 0; i < arr.Length - 1; i++)
+    int[] result = arr.ToArray();
+    vergleiche = 0;
+
+    for (int i = 0; i < result.Length - 1; i++)
     {
-      for (int j = 0; j < arr.Length - 1 - i; j++)
+      for (int j = 0; j < result.Length - 1 - i; j++)
       {
         vergleiche++;
-        if (arr[j] > arr[j + 1])
+        if (result[j] > result[j + 1])
         {
-          (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
-          TxtErgebnis.AppendText($"  Tausch: [{string.Join(", ", arr)}]\r\n");
+          (result[j], result[j + 1]) = (result[j + 1], result[j]);
         }
       }
     }
-    return vergleiche;
+
+    return result;
   }
 
-  private static bool IsSorted(int[] arr)
+  private static bool IsSorted(int[] numbers)
   {
-    for (int i = 0; i < arr.Length - 1; i++)
-      if (arr[i] > arr[i + 1]) return false;
+    for (int i = 0; i < numbers.Length - 1; i++)
+      if (numbers[i] > numbers[i + 1]) return false;
     return true;
   }
 }
