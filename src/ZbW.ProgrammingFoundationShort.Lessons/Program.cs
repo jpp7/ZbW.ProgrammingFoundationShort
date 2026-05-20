@@ -59,9 +59,9 @@ internal static class Program
     // ZbW.ProgrammingFoundationShort.Lessons.Module09.Auftrag3_MediaHierarchy.MediaDemo.Start();
 
     // ---- Modul 10 ----
-    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag1_SucheVergleichen.SucheVergleichen.LinearSearch(new[] { 3, 1, 7, 5, 9 }, 7));
-    // Application.Run(new ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag2_BrowserVerlaufStack.BrowserVerlaufForm());
-    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag3_SortierVisualisierung.SortierVisualisierung.BubbleSortSteps(new[] { 64, 34, 25, 12, 22, 11, 90 }));
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag1_AblaufPlanen.AblaufPlanen.BuildFlowchart());
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag2_TodosUmsetzen.TodosUmsetzen.RunDemo());
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag3_DatenstrukturWahl._Loesung.DatenstrukturWahlLoesung.RunDemo());
   }
 }
 

@@ -67,9 +67,8 @@ internal static class Program
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module09.Aufgabe4_SpielEntities.SpielEntitiesForm());
 
     // ---- Modul 10 ----
-    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module10.Aufgabe1_SuchVergleich.SuchVergleichForm());
-    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module10.Aufgabe2_BrowserVerlaufStack.BrowserVerlaufStackForm());
-    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module10.Aufgabe3_SortierAnalyse.SortierAnalyseForm());
-    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module10.Aufgabe4_RekursionsVisualisierung.RekursionsVisualisierungForm());
+    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module10.Aufgabe1_AblaufPlanen.AblaufPlanenForm());
+    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module10.Aufgabe2_TodosUmsetzen.TodosUmsetzenForm());
+    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module10.Aufgabe3_DatenstrukturWahl.DatenstrukturWahlForm());
   }
 }

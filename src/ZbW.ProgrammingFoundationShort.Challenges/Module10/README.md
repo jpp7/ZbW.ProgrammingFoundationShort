@@ -2,17 +2,15 @@
 
 ## Hausaufgaben
 
-| # | Name                     | Typ      | Schwierigkeit |
-|---|--------------------------|----------|---------------|
-| 1 | SuchVergleich            | WinForms | Einfach       |
-| 2 | BrowserVerlaufStack      | WinForms | Mittel        |
-| 3 | SortierAnalyse           | WinForms | Schwer        |
-| 4 | RekursionsVisualisierung | WinForms | Bonus         |
+| # | Name                | Typ      | Schwierigkeit |
+|---|---------------------|----------|---------------|
+| 1 | AblaufPlanen        | WinForms | Einfach       |
+| 2 | TodosUmsetzen       | WinForms | Einfach-Mittel |
+| 3 | DatenstrukturWahl   | WinForms | Optional      |
 
 ## Inhalte
 
-- lineare Suche und binäre Suche mit Vergleichszähler
-- Browser-Verlauf mit zwei `Stack<string>`-Instanzen
-- Bubble Sort und `Array.Sort` mit Zeitmessung; Selection Sort als Zusatz/Bonus
-- rekursive, iterative und memoized Fibonacci-Berechnung nur in der Bonusaufgabe
-
+- Ablauf vor dem Programmieren formulieren
+- Flowchart und TODO-Kommentare als Planungshilfe nutzen
+- TODOs Schritt für Schritt in C#-Code umsetzen
+- passende Datenstruktur auswählen: `List<T>`, `Dictionary<K,V>`, `Stack<T>`

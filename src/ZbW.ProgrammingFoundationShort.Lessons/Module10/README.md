@@ -2,20 +2,21 @@
 
 ## Lernziele
 
-- Lineare und binäre Suche implementieren und vergleichen
-- Stack als Datenstruktur einsetzen
-- Bubble Sort Schritt für Schritt nachvollziehen
-- Laufzeiten und Vergleichszähler interpretieren
+- Einen Algorithmus zuerst als Ablauf formulieren
+- Einfache Flowcharts lesen und erstellen
+- TODO-Kommentare als Brücke zwischen Planung und Code nutzen
+- Einfache Datenstrukturen passend auswählen: `List<T>`, `Dictionary<K,V>`, `Stack<T>`
 
 ## Aufträge
 
-| # | Name                  | Typ      | Schwierigkeit |
-|---|-----------------------|----------|---------------|
-| 1 | SucheVergleichen      | Konsole  | Einfach       |
-| 2 | BrowserVerlaufStack   | WinForms | Mittel        |
-| 3 | SortierVisualisierung | Konsole  | Erweitert     |
+| # | Name                | Typ     | Schwierigkeit |
+|---|---------------------|---------|---------------|
+| 1 | AblaufPlanen        | Konsole | Einfach       |
+| 2 | TodosUmsetzen       | Konsole | Mittel        |
+| 3 | DatenstrukturWahl   | Konsole | Einfach       |
 
 ## Hinweise
 
-- Modul 10 dient als Abschlussblock und Repetition zentraler Programmiermuster.
-- `_Loesung` enthält vollständige Varianten der Algorithmen.
+- Modul 10 ist bewusst einfach gehalten.
+- Der Fokus liegt auf: erst Ablauf verstehen, dann Code schreiben.
+- `_Loesung` enthält vollständige Beispielumsetzungen.
