@@ -36,7 +36,7 @@ partial class KontaktmanagerForm
     Controls.Add(LblFirst); Controls.Add(TxtFirstName); Controls.Add(LblLast); Controls.Add(TxtLastName);
     Controls.Add(LblEmail); Controls.Add(TxtEmail);
     Controls.Add(CmdHinzufuegen); Controls.Add(CmdEntfernen); Controls.Add(LstKontakte);
-    Name = "KontaktmanagerForm"; Text = "Kontaktmanager – Auftrag 3";
+    Name = "KontaktmanagerForm"; Text = "Kontaktmanager – UI, Logik, Daten";
     ResumeLayout(false); PerformLayout();
   }
 
@@ -46,3 +46,4 @@ partial class KontaktmanagerForm
   private Button CmdHinzufuegen; private Button CmdEntfernen;
   private ListBox LstKontakte;
 }
+

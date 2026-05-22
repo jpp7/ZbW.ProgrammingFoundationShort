@@ -3,17 +3,17 @@ namespace ZbW.ProgrammingFoundationShort.Lessons.Module07.Auftrag3_Kontaktmanage
 // ============================================================
 // AUFTRAG 3 – Kontaktmanager (⭐⭐⭐ Schwer | ~20 Min.)
 //
-// Kontaktmanager mit Duplikat-Prüfung via Equals.
+// Kontaktmanager mit getrennter UI, Logik und Datenklasse.
 //
 // Anforderungen:
-//   - PersonKontakt.cs: Equals nach Vor+Nachname, Email nullable
-//   - List<PersonKontakt>.Contains() für Duplikat-Prüfung
-//   - TxtFirstName/TxtLastName/TxtEmail, CmdHinzufuegen/CmdEntfernen
+//   - PersonKontakt.cs: Datenklasse mit Equals nach Vor+Nachname, Email nullable
+//   - ContactManager.cs: Logikklasse mit Add(), RemoveAt(), GetAll()
+//   - Form: Eingaben lesen, ContactManager aufrufen, ListBox aktualisieren
 // ============================================================
 
 public partial class KontaktmanagerForm : Form
 {
-  // TODO 1: private List<PersonKontakt> _kontakte = new();
+  // TODO 1: private ContactManager _contactManager = new();
 
   public KontaktmanagerForm()
   {
@@ -23,12 +23,13 @@ public partial class KontaktmanagerForm : Form
   private void CmdHinzufuegen_Click(object sender, EventArgs e)
   {
     // TODO 2: PersonKontakt aus Eingabefeldern erstellen
-    // TODO 3: _kontakte.Contains(kontakt) → Duplikat prüfen
-    // TODO 4: _kontakte.Add(kontakt); ListBox aktualisieren
+    // TODO 3: _contactManager.Add(kontakt) aufrufen und Duplikat behandeln
+    // TODO 4: ListBox über _contactManager.GetAll() aktualisieren
   }
 
   private void CmdEntfernen_Click(object sender, EventArgs e)
   {
-    // TODO 5: Ausgewählten Kontakt entfernen
+    // TODO 5: Ausgewählten Kontakt über _contactManager.RemoveAt(...) entfernen
   }
 }
+

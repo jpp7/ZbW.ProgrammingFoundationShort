@@ -1,11 +1,11 @@
 namespace ZbW.ProgrammingFoundationShort.Lessons.Module07.Auftrag3_Kontaktmanager;
 
 /// <summary>
-///   Lösung: Kontaktmanager mit Duplikat-Prüfung via Equals.
+///   Lösung: Kontaktmanager mit Datenklasse, ContactManager-Logik und schlanker Form.
 /// </summary>
 public partial class KontaktmanagerFormLoesung : Form
 {
-  private readonly List<PersonKontakt> _kontakte = new();
+  private readonly ContactManager _contactManager = new();
 
   public KontaktmanagerFormLoesung()
   {
@@ -28,28 +28,21 @@ public partial class KontaktmanagerFormLoesung : Form
       return;
     }
 
-    // Duplikat-Prüfung via Equals (vergleicht FirstName + LastName)
-    if (_kontakte.Contains(kontakt))
+    if (!_contactManager.Add(kontakt))
     {
       MessageBox.Show($"{kontakt.FirstName} {kontakt.LastName} ist bereits vorhanden.",
         "Duplikat", MessageBoxButtons.OK, MessageBoxIcon.Information);
       return;
     }
 
-    _kontakte.Add(kontakt);
     AktualisiereListBox();
     TxtFirstName.Clear(); TxtLastName.Clear(); TxtEmail.Clear();
   }
 
   private void CmdEntfernen_Click(object sender, EventArgs e)
   {
-    if (LstKontakte.SelectedIndex < 0) return;
-
-    // Kontakt aus Index zurückfinden und entfernen
-    int idx = LstKontakte.SelectedIndex;
-    if (idx < _kontakte.Count)
+    if (_contactManager.RemoveAt(LstKontakte.SelectedIndex))
     {
-      _kontakte.RemoveAt(idx);
       AktualisiereListBox();
     }
   }
@@ -57,7 +50,9 @@ public partial class KontaktmanagerFormLoesung : Form
   private void AktualisiereListBox()
   {
     LstKontakte.Items.Clear();
-    foreach (var k in _kontakte)
-      LstKontakte.Items.Add(k.ToString());
+    foreach (PersonKontakt kontakt in _contactManager.GetAll())
+    {
+      LstKontakte.Items.Add(kontakt.ToString());
+    }
   }
 }

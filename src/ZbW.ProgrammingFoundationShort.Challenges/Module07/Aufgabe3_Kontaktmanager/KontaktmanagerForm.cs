@@ -1,7 +1,7 @@
 namespace ZbW.ProgrammingFoundationShort.Challenges.Module07.Aufgabe3_Kontaktmanager;
 
 /// <summary>
-///   Aufgabe 3 – Kontaktmanager mit getrennter UI und Logik (⭐⭐⭐ Schwer)
+///   Aufgabe 3 – Kontaktmanager mit getrennter UI, Logik und Daten (⭐⭐⭐ Schwer)
 /// </summary>
 public partial class KontaktmanagerForm : Form
 {
@@ -65,3 +65,4 @@ public partial class KontaktmanagerForm : Form
     }
   }
 }
+

@@ -51,7 +51,7 @@ partial class KontaktmanagerForm
     Controls.Add(LblBirthday); Controls.Add(TxtBirthday); Controls.Add(CmdHinzufuegen);
     Controls.Add(LblSuche); Controls.Add(TxtSuche); Controls.Add(CmdSuchen); Controls.Add(CmdAlleAnzeigen);
     Controls.Add(TxtAusgabe);
-    Name = "KontaktmanagerForm"; Text = "Kontaktmanager – UI und Logik getrennt";
+    Name = "KontaktmanagerForm"; Text = "Kontaktmanager – UI, Logik, Daten";
     ResumeLayout(false); PerformLayout();
   }
 
@@ -65,3 +65,4 @@ partial class KontaktmanagerForm
   private Button CmdSuchen; private Button CmdAlleAnzeigen;
   private TextBox TxtAusgabe;
 }
+

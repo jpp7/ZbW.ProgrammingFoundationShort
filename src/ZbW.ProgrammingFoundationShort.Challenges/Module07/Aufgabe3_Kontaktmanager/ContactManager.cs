@@ -32,3 +32,4 @@ public class ContactManager
 
   public List<Contact> GetAll() => new(_contacts);
 }
+

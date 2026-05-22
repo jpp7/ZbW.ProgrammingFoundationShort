@@ -6,6 +6,7 @@
 - Referenzidentität und strukturelle Gleichheit verstehen
 - `Equals` und `GetHashCode` korrekt überschreiben
 - Kontaktlisten und Duplikatprüfung umsetzen
+- UI, Logik und Datenklasse pragmatisch trennen
 
 ## Aufträge
 
@@ -19,3 +20,5 @@
 
 - Die Übungen zeigen bewusst typische Stolperstellen bei Referenzen.
 - `_Loesung` enthält vollständige Vergleichsimplementierungen.
+- Auftrag 3 trennt Form/UI, `ContactManager`-Logik und `PersonKontakt`-Datenklasse.
+

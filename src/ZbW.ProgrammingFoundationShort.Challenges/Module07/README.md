@@ -12,5 +12,6 @@
 ## Inhalte
 
 - Referenzverhalten und Gleichheit
-- Kontaktverwaltung mit getrennter UI und Kontaktlogik
+- Kontaktverwaltung mit getrennter UI, Kontaktlogik und Datenklasse
 - Shallow Copy und Deep Copy
+

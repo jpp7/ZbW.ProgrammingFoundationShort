@@ -1,6 +1,6 @@
 namespace ZbW.ProgrammingFoundationShort.Challenges.Module07.Aufgabe3_Kontaktmanager;
 
-/// <summary>Kontakt mit allen Feldern und optionalem Geburtstag.</summary>
+/// <summary>Datenklasse für einen Kontakt mit allen Feldern und optionalem Geburtstag.</summary>
 public class Contact
 {
   public string FirstName { get; set; } = "";
@@ -30,3 +30,4 @@ public class Contact
     return $"{FirstName} {LastName} | {Phone} | {Email} | Geb: {birthdayText}";
   }
 }
+

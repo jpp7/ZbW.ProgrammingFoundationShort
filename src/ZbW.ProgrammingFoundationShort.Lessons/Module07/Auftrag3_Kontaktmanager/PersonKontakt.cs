@@ -1,6 +1,6 @@
 namespace ZbW.ProgrammingFoundationShort.Lessons.Module07.Auftrag3_Kontaktmanager;
 
-/// <summary>Kontakt-Klasse mit null-sicheren Operatoren und Equals.</summary>
+/// <summary>Datenklasse für einen Kontakt mit null-sicherer Ausgabe und Equals.</summary>
 public class PersonKontakt
 {
   public string FirstName { get; set; } = "";
@@ -26,3 +26,4 @@ public class PersonKontakt
     return $"{FirstName} {LastName} – {Email ?? "(keine E-Mail)"}";
   }
 }
+
