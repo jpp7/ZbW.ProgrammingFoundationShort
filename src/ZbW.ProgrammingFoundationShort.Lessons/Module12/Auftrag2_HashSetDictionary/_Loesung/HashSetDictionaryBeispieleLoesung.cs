@@ -25,14 +25,7 @@ public static class HashSetDictionaryBeispieleLoesung
 
     foreach (string word in words)
     {
-      if (counts.ContainsKey(word))
-      {
-        counts[word]++;
-      }
-      else
-      {
-        counts[word] = 1;
-      }
+      counts[word] = counts.GetValueOrDefault(word) + 1;
     }
 
     return counts;
