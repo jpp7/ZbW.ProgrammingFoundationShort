@@ -62,6 +62,16 @@ internal static class Program
     // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag1_AblaufPlanen.AblaufPlanen.BuildFlowchart());
     // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag2_TodosUmsetzen.TodosUmsetzen.RunDemo());
     // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module10.Auftrag3_DatenstrukturWahl._Loesung.DatenstrukturWahlLoesung.RunDemo());
+
+    // ---- Modul 11 ----
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module11.Auftrag1_IterationRekursion._Loesung.IterationRekursionLoesung.RunDemo());
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module11.Auftrag2_BinaereSuche._Loesung.BinaereSucheLoesung.RunDemo());
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module11.Auftrag3_GreedyWechselgeld._Loesung.GreedyWechselgeldLoesung.RunDemo());
+
+    // ---- Modul 12 ----
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module12.Auftrag1_StackQueue._Loesung.StackQueueBeispieleLoesung.RunDemo());
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module12.Auftrag2_HashSetDictionary._Loesung.HashSetDictionaryBeispieleLoesung.RunDemo());
+    // Console.WriteLine(ZbW.ProgrammingFoundationShort.Lessons.Module12.Auftrag3_PriorityQueue._Loesung.PriorityQueueBeispieleLoesung.RunDemo());
   }
 }
 
