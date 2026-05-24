@@ -75,11 +75,14 @@ internal static class Program
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module11.Aufgabe1_WortUmkehren.WortUmkehrenForm());
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module11.Aufgabe2_LaufzeitBeobachten.LaufzeitBeobachtenForm());
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module11.Aufgabe3_GreedyGegenbeispiel.GreedyGegenbeispielForm());
+    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module11.Aufgabe4_FibonacciMemoization.FibonacciMemoizationForm());
 
     // ---- Modul 12 ----
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module12.Aufgabe1_DatenstrukturEntscheidungen.DatenstrukturEntscheidungenForm());
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module12.Aufgabe2_KleineImplementation.KleineImplementationForm());
     // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module12.Aufgabe3_PriorityQueue.PriorityQueueForm());
+    // Application.Run(new ZbW.ProgrammingFoundationShort.Challenges.Module12.Aufgabe4_EinfacherCache.EinfacherCacheForm());
   }
 }
+
 
